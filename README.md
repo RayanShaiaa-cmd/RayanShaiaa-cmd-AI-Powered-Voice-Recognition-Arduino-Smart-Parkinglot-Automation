@@ -488,4 +488,8 @@ This project demonstrates a complete real-world integration between:
 * Embedded Systems
 * IoT Automation
 
+<<<<<<< HEAD
 Delivering a fully interactive AI-powered smart parking solution controlled entirely through voice commands.
+=======
+Delivering a fully interactive AI-powered smart parking solution controlled entirely through voice commands.
+>>>>>>> 4ed393457ee7dfe9af14b8b150fd136f7ce56cb3
