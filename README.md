@@ -2,78 +2,123 @@
 
 > AI-Powered Voice Recognition + Arduino Smart Parking Automation
 
-![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python)
-![Arduino](https://img.shields.io/badge/Arduino-UNO-green?style=for-the-badge&logo=arduino)
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge\&logo=python)
+![Arduino](https://img.shields.io/badge/Arduino-UNO-green?style=for-the-badge\&logo=arduino)
 ![Machine Learning](https://img.shields.io/badge/Machine-Learning-orange?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?style=for-the-badge&logo=streamlit)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?style=for-the-badge\&logo=streamlit)
+![IoT](https://img.shields.io/badge/IoT-Smart%20Automation-purple?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Project-Completed-success?style=for-the-badge)
 
 ---
 
 # 📌 Overview
 
-An intelligent smart parking system that combines:
+An AI-powered smart parking system that integrates:
 
-- Artificial Intelligence
-- Machine Learning
-- Voice Recognition
-- Arduino Automation
-- Real-Time Audio Processing
-- IoT Integration
+* Machine Learning
+* Real-Time Voice Recognition
+* Embedded Systems
+* IoT Automation
+* Audio Signal Processing
+* Arduino Hardware Control
 
-The system recognizes voice commands using a Machine Learning model and controls a smart parking environment through Arduino hardware.
+The project enables users to control a smart parking environment entirely through voice commands.
+A Machine Learning model processes spoken commands, predicts user intent, and sends instructions directly to an Arduino-based hardware system.
 
 ---
 
-# 🚀 Features
+# 🚀 Core Features
 
 ## 🎤 Real-Time Voice Recognition
-Recognizes voice commands directly from the microphone.
 
-## 🧠 Machine Learning Pipeline
-- MFCC Feature Extraction
-- Delta & Delta-Delta Features
-- StandardScaler
-- Random Forest Classifier
+* Live microphone input processing
+* Real-time command prediction
+* Confidence score estimation
+* Interactive voice response system
 
-## 🔌 Arduino Integration
-Controls:
-- LEDs
-- Servo Motor
-- Buzzer
-- LCD Display
-- Ultrasonic Sensor
+---
 
-## 🚗 Smart Parking Automation
-- Automatic gate control
-- Vehicle counting
-- Parking monitoring
-- Alarm system
+## 🧠 Advanced Machine Learning Pipeline
 
-## 📊 Interactive Dashboard
-Built using Streamlit for:
-- Model training
-- Live prediction
-- Visualization
-- Testing
+### Feature Engineering
+
+* MFCC Extraction
+* Delta Features
+* Delta-Delta Features
+* Statistical Audio Features
+
+### Data Processing
+
+* Audio Normalization
+* Feature Scaling using `StandardScaler`
+* WAV Dataset Handling
+
+### Classification Model
+
+* Random Forest Classifier
+* High-dimensional feature representation
+* Multi-command voice classification
+
+---
+
+## 🔌 Arduino Smart Automation
+
+The Arduino subsystem controls:
+
+* Servo Motor (Parking Gate)
+* LEDs
+* Buzzer Alarm
+* LCD Display
+* Ultrasonic Sensor
+
+Through serial communication between Python and Arduino UNO.
+
+---
+
+## 🚗 Smart Parking Functionalities
+
+* Automatic parking gate control
+* Parking occupancy monitoring
+* Vehicle counting system
+* Alarm activation
+* Smart command execution
+
+---
+
+## 📊 Interactive AI Dashboard
+
+Built using Streamlit.
+
+### Dashboard Modules
+
+* Dataset EDA
+* Model Training
+* Model Evaluation
+* Live Voice Prediction
+* PCA Visualization
+* Model Download System
 
 ---
 
 # 🏗️ System Architecture
 
 ```text
-Voice Input
-     ↓
-Feature Extraction (MFCC)
-     ↓
-Machine Learning Model
-     ↓
-Prediction
-     ↓
+User Voice Input
+        ↓
+Audio Recording
+        ↓
+MFCC Feature Extraction
+        ↓
+Feature Scaling
+        ↓
+Random Forest Model
+        ↓
+Command Prediction
+        ↓
 Serial Communication
-     ↓
+        ↓
 Arduino UNO
-     ↓
+        ↓
 Hardware Execution
 ```
 
@@ -81,26 +126,36 @@ Hardware Execution
 
 # 🛠️ Technologies Used
 
-## Programming & AI
-- Python
-- Scikit-learn
-- Librosa
-- NumPy
-- Pandas
+## Artificial Intelligence & Machine Learning
 
-## Dashboard & Visualization
-- Streamlit
-- Plotly
-- Matplotlib
-- Seaborn
+* Python
+* Scikit-learn
+* Librosa
+* NumPy
+* Pandas
 
-## Embedded Systems
-- Arduino UNO
-- PySerial
+---
+
+## Data Visualization & Dashboard
+
+* Streamlit
+* Plotly
+* Matplotlib
+* Seaborn
+
+---
 
 ## Audio Processing
-- SoundDevice
-- pyttsx3
+
+* SoundDevice
+* pyttsx3
+
+---
+
+## Embedded Systems & IoT
+
+* Arduino UNO
+* PySerial
 
 ---
 
@@ -109,7 +164,20 @@ Hardware Execution
 ```text
 Smart-Parking-Voice-Control/
 │
-├── commands/
+├── project_images/
+│   ├── electrical_connection/
+│   ├── brochure/
+│   ├── infographic/
+│   ├── real_project_audio_1.wav
+│   └── real_project_audio_2.wav
+│
+├── secondary_files/
+│   ├── voice_generator.py
+│   ├── model_loader.py
+│   └── arduino_codes/
+│       └── SmartParking.ino
+│
+├── training_voice/
 │   ├── on/
 │   ├── off/
 │   ├── unlock/
@@ -117,58 +185,69 @@ Smart-Parking-Voice-Control/
 │   └── number/
 │
 ├── Test/
+│   ├── on/
+│   ├── off/
+│   ├── unlock/
+│   ├── alarm/
+│   └── number/
 │
-├── model14.joblib
-├── model14_scalar.joblib
+├── models/
+│   ├── model14.joblib
+│   └── model14_scalar.joblib
 │
-├── Streamlit_Voice_Command_Platform_Monolith.py
+├── web.py
 │
-├── Arduino_Code/
-│   └── SmartParking.ino
-│
-└── README.md
+├── requirements.txt
+├── README.md
+└── LICENSE
 ```
 
 ---
 
 # 🎧 Supported Voice Commands
 
-| Command | Function |
-|---|---|
-| `on` | Turn ON LEDs |
-| `off` | Turn OFF LEDs |
-| `unlock` | Open parking gate |
-| `alarm` | Activate alarm |
-| `number` | Display number of cars |
+| Voice Command | System Action              |
+| ------------- | -------------------------- |
+| `on`          | Turn ON LEDs               |
+| `off`         | Turn OFF LEDs              |
+| `unlock`      | Open parking gate          |
+| `alarm`       | Activate security alarm    |
+| `number`      | Display number of vehicles |
 
 ---
 
 # 🔌 Hardware Components
 
-- Arduino UNO
-- HC-SR04 Ultrasonic Sensor
-- Servo Motor
-- LCD 16x2 I2C
-- LEDs
-- Buzzer
-- Resistors
-- Jumper Wires
+* Arduino UNO
+* HC-SR04 Ultrasonic Sensor
+* Servo Motor
+* LCD 16x2 I2C
+* LEDs
+* Buzzer
+* Resistors
+* Jumper Wires
 
 ---
 
-# ⚙️ Installation
+# ⚙️ Installation & Setup
 
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/smart-parking-voice-control.git
+git clone https://github.com/your-username/Smart-Parking-Voice-Control.git
 
-cd smart-parking-voice-control
+cd Smart-Parking-Voice-Control
 ```
 
 ---
 
-## 2️⃣ Install Requirements
+## 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Or manually:
 
 ```bash
 pip install streamlit librosa sounddevice scikit-learn seaborn matplotlib joblib pyserial plotly numpy pandas pyttsx3
@@ -176,38 +255,55 @@ pip install streamlit librosa sounddevice scikit-learn seaborn matplotlib joblib
 
 ---
 
-## 3️⃣ Run Streamlit App
+## 3️⃣ Run Streamlit Application
 
 ```bash
-streamlit run Streamlit_Voice_Command_Platform_Monolith.py
+streamlit run web.py
 ```
 
 ---
 
-# 📊 Machine Learning Pipeline
+# 🧠 Machine Learning Workflow
 
-## 1. Data Collection
-Custom voice commands dataset in WAV format.
+## 1. Dataset Collection
 
-## 2. Preprocessing
-- Normalization
-- 16kHz sampling rate
+Custom WAV voice command dataset collected for each command category.
+
+---
+
+## 2. Audio Preprocessing
+
+* Sampling Rate: 16kHz
+* Audio normalization
+* Signal preparation
+
+---
 
 ## 3. Feature Extraction
-Extract:
-- MFCC
-- Delta
-- Delta-Delta
-- Statistical Features
+
+The system extracts:
+
+* MFCC Features
+* Delta Features
+* Delta-Delta Features
+* Mean / Std / Min / Max Statistics
+
+---
 
 ## 4. Feature Scaling
-Using:
+
+The extracted features are normalized using:
+
 ```python
 StandardScaler()
 ```
 
+---
+
 ## 5. Model Training
-Using:
+
+The classification model uses:
+
 ```python
 RandomForestClassifier(
     n_estimators=1000,
@@ -215,62 +311,147 @@ RandomForestClassifier(
 )
 ```
 
-## 6. Evaluation
-- Accuracy
-- Confusion Matrix
-- Classification Report
-- PCA Visualization
+---
+
+## 6. Model Evaluation
+
+Evaluation Metrics:
+
+* Accuracy Score
+* Confusion Matrix
+* Classification Report
+* PCA Visualization
 
 ---
 
-# 📈 Dashboard Features
+# 📊 Streamlit Dashboard Modules
 
-The Streamlit dashboard contains:
+## 📈 Dataset EDA
 
-- Dataset EDA
-- Train Model
-- Evaluate Test
-- Live Prediction
-- PCA Visualization
-- Download Model
+Visual analysis of:
+
+* Audio duration
+* Energy distribution
+* MFCC heatmaps
+* Dataset balance
 
 ---
 
-# 🚗 Smart Parking Workflow
+## 🧠 Train Model
+
+* Train RandomForest model
+* Save scaler & classifier
+* Real-time training status
+
+---
+
+## 🔍 Evaluate Test Dataset
+
+* Accuracy calculation
+* Confusion matrix visualization
+* Classification performance report
+
+---
+
+## 🎙️ Live Voice Prediction
+
+* Real-time microphone recording
+* Command prediction
+* Confidence estimation
+* Arduino command execution
+
+---
+
+## 📉 PCA Visualization
+
+* Feature-space visualization
+* Live sample mapping
+* Command clustering analysis
+
+---
+
+## ⬇️ Download Model
+
+Download:
+
+* Trained model
+* Feature scaler
+
+---
+
+# 🔄 Smart Parking Workflow
 
 ```text
 User Speaks Command
         ↓
-AI Predicts Intent
+Microphone Captures Audio
         ↓
-Python Sends Serial Command
+AI Extracts Audio Features
         ↓
-Arduino Receives Instruction
+Machine Learning Predicts Command
+        ↓
+Python Sends Serial Instruction
+        ↓
+Arduino Receives Command
         ↓
 Hardware Executes Action
 ```
 
 ---
 
-# 🔮 Future Improvements
+# 📁 About Project Folders
 
-- Arabic Voice Recognition
-- Deep Learning Models (CNN/LSTM)
-- Noise Reduction
-- Wake Word Detection
-- Mobile Application
-- Cloud Deployment
-- License Plate Recognition
+## 📂 project_images
+
+Contains:
+
+* Electrical wiring diagrams
+* Project brochure designs
+* Infographics
+* Real recorded project audio demonstrations
 
 ---
 
-# 🧪 Applications
+## 📂 secondary_files
 
-- Smart Parking Systems
-- Smart Cities
-- Home Automation
-- Security Systems
-- AI IoT Platforms
+Contains:
+
+* Voice generation scripts
+* Model loading utilities
+* Arduino source codes
+
+---
+
+## 📂 training_voice
+
+Contains:
+
+* Voice datasets used for training
+* Organized by command labels
+
+---
+
+# 🔮 Future Improvements
+
+* Arabic Voice Recognition
+* CNN/LSTM Deep Learning Models
+* Noise Reduction Pipeline
+* Wake Word Detection
+* Mobile Application
+* Cloud Deployment
+* License Plate Recognition
+* Edge AI Deployment
+
+---
+
+# 🧪 Real-World Applications
+
+* Smart Parking Systems
+* Smart City Infrastructure
+* Voice-Controlled Automation
+* Embedded AI Systems
+* Security & Surveillance
+* IoT Control Platforms
 
 ---
 
@@ -278,15 +459,16 @@ Hardware Executes Action
 
 ## Rayan Shaiaa
 
-Artificial Intelligence Student  
+Artificial Intelligence Student
 AI & Embedded Systems Developer
 
-Specialized in:
-- Machine Learning
-- Smart Systems
-- Computer Vision
-- Embedded AI
-- IoT Automation
+### Specializations
+
+* Machine Learning
+* Embedded AI
+* Computer Vision
+* IoT Automation
+* Smart Systems Engineering
 
 ---
 
@@ -296,14 +478,14 @@ This project is licensed under the MIT License.
 
 ---
 
-# ⭐ Final Note
+# ⭐ Final Statement
 
-This project demonstrates a complete integration between:
+This project demonstrates a complete real-world integration between:
 
-- Artificial Intelligence
-- Machine Learning
-- Audio Signal Processing
-- Embedded Systems
-- IoT Automation
+* Artificial Intelligence
+* Machine Learning
+* Audio Signal Processing
+* Embedded Systems
+* IoT Automation
 
-Creating a real-world intelligent smart parking solution controlled entirely by voice commands.
+Delivering a fully interactive AI-powered smart parking solution controlled entirely through voice commands.
