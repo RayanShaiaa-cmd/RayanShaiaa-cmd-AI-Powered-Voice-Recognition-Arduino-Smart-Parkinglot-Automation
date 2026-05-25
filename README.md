@@ -168,8 +168,8 @@ Smart-Parking-Voice-Control/
 │   ├── electrical_connection/
 │   ├── brochure/
 │   ├── infographic/
-│   ├── real_project_audio_1.wav
-│   └── real_project_audio_2.wav
+│   ├── real_project_audio_1.jpg
+│   └── real_project_audio_2.jpg
 │
 ├── secondary_files/
 │   ├── voice_generator.py
